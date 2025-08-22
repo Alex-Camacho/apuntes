@@ -1,0 +1,18 @@
+/* Empezando con CSS*/
+
+* {
+    color: black;
+}
+
+div {
+    color:white;
+}
+
+.encabezados,
+.fondo {
+    font-size: large;
+}
+
+#guide {
+    font-weight: 100;
+}
