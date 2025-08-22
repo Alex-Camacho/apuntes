@@ -1,0 +1,2 @@
+# apuntes
+Apuntes durante aprendizaje.
