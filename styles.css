@@ -1,11 +1,27 @@
 /* Empezando con CSS*/
 
-* {
+/* * {
     color: black;
+    background-color: bisque;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}*/
+
+/*Predefinir el tamaño de la imagen reserva el espacio mientras se carga
+la página*/
+img {
+    height: 420;
+    width: 310;
+}
+
+h1 {
+    background-color:rgb(143, 188, 239);
 }
 
 div {
-    color:white;
+    color:black;
 }
 
 .encabezados,
@@ -15,4 +31,76 @@ div {
 
 #guide {
     font-weight: 100;
+}
+
+/* Chained selectors (Selecciona elementos con ambas clases especificadas, también
+se pueden combinar con #IDs */
+
+.subscetion.header {
+
+}
+
+/*Descendant combinators (Selecciona la última clase especificada y va mirando
+que tenga un ancestor previo especificado, se realiza con "espacio"*/
+
+.ancestor .contents{
+
+}
+
+
+/* Regla 1: La especificidad va por orden
+1)Inline styles(<div style = "background-color: white;">...</div>
+2)ID selectors (id="")
+3)Class selectors(class="")
+4)Type selectors */
+
+/* Regla 2: Si están al mismo nivel tendrá más especifidad el que más class
+selectors tenga */
+
+
+/*The Box Model*/
+
+* {
+    box-sizing: border-box;
+    /*outline: 2px solid red; (sirve para mostrar los bordes de cajas)*/
+}
+
+.box{
+    padding: 20px;
+    border: 5px;
+    margin: 0 auto;
+}
+
+/*Truco para hacer que un link tenga más area para clicar es 
+añadir padding con display: inline.block */
+
+/*Tipos de display: inline, block o inline-block */
+
+.css-title { /*Útil para centrar horizontalmente?*/
+    width: 1500px;
+    margin: 0 auto;
+}
+
+/*Para fijar la posición de un elemento podemos usar position: fixed;*/
+
+
+/*Flexbox*/
+
+.flexbox1 {
+    display: flex;
+    margin: 10px;
+   
+}
+
+.flexbox1 div {
+ flex: 1; /* Igual que flex: 1 1 0%; (inicialmente ocupa todo espacio disponible
+            , se ensancha y reduce con valor 1. */
+    background-color: blanchedalmond;
+    border: 4px solid brown;
+    height: 100px;
+}
+
+.flexbox1 .box-two{
+    flex: 2 1 0%; /* flex-grow/flex-shrink/flex-basis */
+    /* Si usaramos flex-shrink: 0; no permitiriamos que se redujera */
 }
