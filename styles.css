@@ -33,8 +33,8 @@ div {
     font-weight: 100;
 }
 
-/* Chained selectors (Selecciona elementos con ambas clases especificadas, también
-se pueden combinar con #IDs */
+/* Chained selectors (Selecciona elementos con ambas clases especificadas, 
+también se pueden combinar con #IDs */
 
 .subscetion.header {
 
@@ -89,7 +89,8 @@ añadir padding con display: inline.block */
 .flexbox1 {
     display: flex;
     margin: 10px;
-   
+    flex-wrap: wrap; /*Si se achica la ventana las filas se aplirán abajo
+    en una nueva fila, hay que definir un min-width*/
 }
 
 .flexbox1 div {
@@ -98,9 +99,61 @@ añadir padding con display: inline.block */
     background-color: blanchedalmond;
     border: 4px solid brown;
     height: 100px;
+    min-width: 300px;
 }
 
 .flexbox1 .box-two{
     flex: 2 1 0%; /* flex-grow/flex-shrink/flex-basis */
     /* Si usaramos flex-shrink: 0; no permitiriamos que se redujera */
 }
+
+.flexbox2 {
+    display: flex;
+    margin: 10px;
+    flex-direction: column; /*Cambia el main axis a vertical, por default row*/
+}
+
+.flexbox2 div {
+    flex: 1 1 auto; /* En flex-basis: auto busca un valor de altura */
+    background-color: aquamarine;
+    border: 4px solid black;
+    height: 100px;
+}
+
+.flexbox3 {
+    display: flex;
+    height: 400px;
+    margin: 10px;
+    padding: 20px;
+    border: solid 4px black;
+    justify-content: center; /*también tenemos space-evenly...*/
+    gap: 10px;
+    align-items: center; /*además de flex-start, flex-end, stretch, baseline*/
+}
+
+.flexbox3 div {
+    background-color: blanchedalmond;
+    border: 4px solid brown;
+    height: 100px;
+    width: 60px;
+}
+
+.flexbox3 .box3-1{
+    align-self: baseline; /*Nos permite cambiar el alignment 
+    de un child específico*/
+    min-width: 0px; /*Cuando un elemento queramos achicarlo hasta 0, aunque flex
+    -shrink sea "1", siempre hay un mínmo de tamaño, por lo que es importante
+    esta característica*/
+    margin-right: auto; /*Permite reordenar el contenido entre si (también 
+    se puede hacer haciendo otro flex container o con flex-grow*/
+}
+
+
+/*ul {
+  list-style-type: none; (Quita los dots de las <ul>
+}*/
+
+/*a {
+  text-decoration: none; 
+  color: black; (Quita el azul de los links)
+}*/ 
