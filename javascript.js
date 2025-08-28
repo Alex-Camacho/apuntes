@@ -274,3 +274,29 @@ select.addEventListener("change", () =>
 //textBox.addEventListener("keydown", (event) => {
 //  console.log(`You pressed "${event.key}".`);
 //});
+
+//Función Declaration (se crea globalmente)
+function sumsum(a, b) {
+  return a + b;
+}
+
+// Function Expression (se crea y es usable solo when the execution reaches it)
+let sumsumsum = function(a, b) {
+  return a + b;
+};
+
+//Mismo ejemplo con arrow functions (son function expressions):
+let sumsumsumsum = (a, b) => a + b; //con arrow functions no hace falta return
+//salvo que usemos {}.
+
+//Otro ejemplo con ? y :
+//let age = prompt("What is your age?", 18);
+
+//let welcomeen = (age < 18) ?
+// function() { alert("Hello!"); } : //Pese a que se crea dentro de un condicional
+// function() { alert("Greetings!"); };//Se asigna a la variable welcomeen y
+
+//welcomeen();//puede llamarse fuera del scope
+
+
+
