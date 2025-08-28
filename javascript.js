@@ -253,3 +253,24 @@ select.addEventListener("change", () =>
 //      break;
 //  }
 //});
+
+
+//Funciones
+
+//function logKey(event) {
+//  console.log(`You pressed "${event.key}".`);
+//}
+
+//textBox.addEventListener("keydown", logKey);
+
+//Función anónima:
+
+//textBox.addEventListener("keydown", function (event) {
+//  console.log(`You pressed "${event.key}".`);
+//});
+
+//Función con flecha:
+
+//textBox.addEventListener("keydown", (event) => {
+//  console.log(`You pressed "${event.key}".`);
+//});
