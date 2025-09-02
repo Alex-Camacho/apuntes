@@ -299,4 +299,49 @@ let sumsumsumsum = (a, b) => a + b; //con arrow functions no hace falta return
 //welcomeen();//puede llamarse fuera del scope
 
 
+//Generador número random del 1 al 100:
+Math.floor(Math.random() * 100) + 1;
+
+
+//Loops
+
+    //for loops:
+    //for (let i = 0; i < 3; i++) { // shows 0, then 1, then 2
+        //alert(i);
+    //}
+
+
+    //while loops:
+
+    //let i = 0;
+
+//while (i < cats.length) {
+//  if (i === cats.length - 1) {
+//    myFavoriteCats += `and ${cats[i]}.`;
+//  } else {
+//    myFavoriteCats += `${cats[i]}, `;
+//  }
+//
+//  i++;
+//}
+
+
+    //do...while: (corre el código al menos 1 vez y luego comprueba la
+    //condición para volver a repetirlo)
+
+    //let i = 0;
+
+//do {
+//  if (i === cats.length - 1) {
+//    myFavoriteCats += `and ${cats[i]}.`;
+//  } else {
+//    myFavoriteCats += `${cats[i]}, `;
+//  }
+//
+//  i++;
+//} while (i < cats.length);
+
+
+//Podemos usar break para terminar el loop cuando se cumpla una condición
+//o continue para mantener el loop mientras se cumpla una condición.
 
