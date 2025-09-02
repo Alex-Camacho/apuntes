@@ -345,3 +345,40 @@ Math.floor(Math.random() * 100) + 1;
 //Podemos usar break para terminar el loop cuando se cumpla una condición
 //o continue para mantener el loop mientras se cumpla una condición.
 
+
+//Arrays
+
+const array = ["A", "B", "C", "D"];
+array.length; //4
+array.push("E"); //Añade "E" a nuestro array.
+array.push(3);//Añade 3 al array.
+
+array.at(-1);//"D". Selecciona el último elemento del array
+
+const nestedArray = [
+    ["A","B"],
+    [1, 2],
+]
+
+console.log(nestedArray[0][1]) //Selecciona "B"
+
+//Métodos de Array
+
+
+    //pop (extrae el último)
+    //array = ['A', 'B', 'C', 'D', 'E', 3];
+    array.pop();// 3 en este caso.
+
+    //push (añade elemento al final)
+    array.push("Z");
+
+    //shift (extrae el primer elemento del array)
+    array.shift(); //A en este caso
+
+    //unshift (añade elemento al inicio del array)
+    array.unshift("S"); // ['S', 'B', 'C', 'D', 'E', 'Z']
+
+
+    //Loops for(let element of array){alert(element);}
+
+    
