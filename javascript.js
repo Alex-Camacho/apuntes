@@ -79,6 +79,13 @@ let oranges = "3";
     //const bigmouth = 'I\'ve got no right to take my place…';
 
 
+
+
+
+
+
+
+
 //String Methods
 
     //toString() convierte a string
@@ -156,6 +163,14 @@ let oranges = "3";
     let arrayText5 = text5.split(",");
 
     
+
+
+
+
+
+
+
+
     //Comparisons
     // > , < , >= , <= , == , === , != , !==
 
@@ -255,6 +270,15 @@ select.addEventListener("change", () =>
 //});
 
 
+
+
+
+
+
+
+
+
+
 //Funciones
 
 //function logKey(event) {
@@ -303,6 +327,13 @@ let sumsumsumsum = (a, b) => a + b; //con arrow functions no hace falta return
 Math.floor(Math.random() * 100) + 1;
 
 
+
+
+
+
+
+
+
 //Loops
 
     //for loops:
@@ -346,6 +377,13 @@ Math.floor(Math.random() * 100) + 1;
 //o continue para mantener el loop mientras se cumpla una condición.
 
 
+
+
+
+
+
+
+
 //Arrays
 
 const array = ["A", "B", "C", "D"];
@@ -381,4 +419,40 @@ console.log(nestedArray[0][1]) //Selecciona "B"
 
     //Loops for(let element of array){alert(element);}
 
-    
+
+//splice (SI MODIFICA EL ARRAY ORIGINAL)
+
+let arr = ["I", "study", "JavaScript", "right", "now"];
+arr.splice(1,1); //quita 1 elemento de index 1 ("study")
+arr.splice(0, 3, "Let's", "dance"); //quita desde el inicio 3 elementos y añade
+// "Let's", "dance"
+arr.splice(2, 0, "a", "cool", "move"); //añade en posición 2 sin quitar nada
+//Pueden usarse index negativos tipo arr.splice(-1,0,"lo que sea"); 
+
+
+//arr.slice([start], [end]) (NO MODIFICA EL ARRAY)
+//arr = ["Let's", 'dance', 'a', 'cool', 'move', 'now']
+arr.slice(1,5); // ['dance', 'a', 'cool', 'move']
+arr.slice(-2);// ['move', 'now']
+arr.slice(); //Genera una copia sin modificar la original
+
+
+//arr.concat(arg1, arg2...) (NO MODIFICA EL ORIGINAL)
+//Concat crea un nuevo array que oncluya al final argumentos que indiquemos
+arr.concat(1,2) // ["Let's", 'dance', 'a', 'cool', 'move', 'now', 1, 2]
+
+
+//Iterate: forEach
+//arr.forEach(function(item, index, array) {
+  // ... do something with an item
+//});
+
+let lordOfTheRings = ["Bilbo", "Gandalf", "Nazgul"];
+
+lordOfTheRings.forEach((item, index, array) => {
+  console.log(`${item} is at index ${index} in ${array}`);
+});
+
+//Bilbo is at index 0 in Bilbo,Gandalf,Nazgul
+//Gandalf is at index 1 in Bilbo,Gandalf,Nazgul
+//Nazgul is at index 2 in Bilbo,Gandalf,Nazgul
