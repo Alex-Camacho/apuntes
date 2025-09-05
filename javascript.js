@@ -430,6 +430,7 @@ arr.splice(2, 0, "a", "cool", "move"); //añade en posición 2 sin quitar nada
 //Pueden usarse index negativos tipo arr.splice(-1,0,"lo que sea"); 
 
 
+
 //arr.slice([start], [end]) (NO MODIFICA EL ARRAY)
 //arr = ["Let's", 'dance', 'a', 'cool', 'move', 'now']
 arr.slice(1,5); // ['dance', 'a', 'cool', 'move']
@@ -437,9 +438,11 @@ arr.slice(-2);// ['move', 'now']
 arr.slice(); //Genera una copia sin modificar la original
 
 
+
 //arr.concat(arg1, arg2...) (NO MODIFICA EL ORIGINAL)
 //Concat crea un nuevo array que oncluya al final argumentos que indiquemos
 arr.concat(1,2) // ["Let's", 'dance', 'a', 'cool', 'move', 'now', 1, 2]
+
 
 
 //Iterate: forEach
@@ -456,3 +459,106 @@ lordOfTheRings.forEach((item, index, array) => {
 //Bilbo is at index 0 in Bilbo,Gandalf,Nazgul
 //Gandalf is at index 1 in Bilbo,Gandalf,Nazgul
 //Nazgul is at index 2 in Bilbo,Gandalf,Nazgul
+
+
+//Searching in array
+
+
+//arr.indexOf(item, from) (devuelve el index del item o -1 si no está)
+//arr.includes(item, from) (devuelve true si está)
+
+lordOfTheRings.indexOf("Gandalf"); //1
+lordOfTheRings.includes("Gandalf")//true
+
+
+
+//arr.find() (Sirve para buscar en un array de objects con una 
+// condición específica)
+
+let usersObject = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+
+let userFromTop = usersObject.find(item => item.id == 1);
+
+console.log(userFromTop.name); //John
+
+
+
+//arr.filter() (devuelve un array con items si la condición es true)
+
+let someUsersObject = usersObject.filter(item => item.id < 3);
+
+console.log(someUsersObject) //devuelve un array con objetos id 1 y 2
+
+
+
+
+//Transform an array
+
+
+//arr.map() (Itera por cada item realizando una función)
+
+let lengthsArray = lordOfTheRings.map(item => item.length); //[5, 7, 6]
+//da la longitud de cada string del array
+
+
+
+//arr.sort() (Modifica el array original)
+
+let arrayExample = [1, 15, 2];
+
+arrayExample.sort((a, b) => a - b); //[1, 2, 15];
+
+
+//arr.reverse() (Ordena al revés el array)
+
+arrayExample.reverse(); // [15, 2, 1]
+
+
+//arr.split() (Separa una string indicandole como y forma un array)
+
+let stringRaro = 'Bilbo, Gandalf, Nazgul';
+
+let arrayRaro = stringRaro.split(", "); //['Bilbo', 'Gandalf', 'Nazgul']
+
+//**Si usamos arr.split("") forma un array letra por letra del string
+//**arr.join(";") (Lo contrario de split, une los items de un array en una string)
+
+
+
+//arr.reduce() (va iterando por todo el array y acumulando el resultado)
+
+let reduceExample = [1, 2, 3, 4, 5];
+let reduceResult = reduceExample.reduce((sum, current) => sum + current, 0);
+//15 (suma de todo el array), se recomienda especificar el sum inicial.
+
+//otro ejemplo:
+const productOfAllNums = reduceExample.reduce((total, currentItem) => {
+  return total * currentItem;
+}, 1); //120
+
+
+//Ejercicio usando filter,map y reduce:
+let ejercicio = [1,2,3,4,5];
+//Quiero crear una función que haga filtrar los números pares,
+//  multiplicarlos por 3(map) y sumarlos (reduce)
+
+let numPares = ejercicio.filter(num => num % 2 == 0);
+
+let numThreeTimes = numPares.map(num => num * 3);
+
+let resultado = numThreeTimes.reduce((total, current) => {
+    return total + current;
+}, 0);
+
+//Convertido a función
+
+function sumOfTripledEvens(array){
+    return array
+        .filter(num => num % 2 === 0)
+        .map(num => num * 3)
+        .reduce((acc, curr) => acc + curr);
+}
