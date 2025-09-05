@@ -562,3 +562,26 @@ function sumOfTripledEvens(array){
         .map(num => num * 3)
         .reduce((acc, curr) => acc + curr);
 }
+
+
+//EJERCICIOS ARRAY
+
+//Convertir string "background-color" a "backgroundColor":
+
+  function camelize(str){
+    return str
+      .split("-")
+      .map((item, i) => i === 0 ? item : item[0].toUpperCase() + item.slice(1))
+      .join("");
+  }
+
+
+  //Modificar un array dejando solo valores comprendidos entre a y b.
+
+  function filterRangeInPlace(arr, a, b) {
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] < a || arr[i] > b) {
+      arr.splice(i, 1);
+    }
+  }
+}
