@@ -423,7 +423,7 @@ console.log(nestedArray[0][1]) //Selecciona "B"
 //splice (SI MODIFICA EL ARRAY ORIGINAL)
 
 let arr = ["I", "study", "JavaScript", "right", "now"];
-arr.splice(1,1); //quita 1 elemento de index 1 ("study")
+arr.splice(1,1); //quita desde el index 1 un elemento "study"
 arr.splice(0, 3, "Let's", "dance"); //quita desde el inicio 3 elementos y añade
 // "Let's", "dance"
 arr.splice(2, 0, "a", "cool", "move"); //añade en posición 2 sin quitar nada
