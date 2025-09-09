@@ -101,5 +101,27 @@
     <h2>Ejemplo de Outer Variables con parámetros (en el primer caso se modifica la variable y en el segundo no).</h2>
     <img src="images/Screenshot from 2025-08-28 15-28-01.png" alt="ejemplo1" height="600px" width="800px">
     <img src="images/Screenshot from 2025-08-28 15-28-16.png" alt="ejemplo2" height="600px" width="800px">
+
+    <h2>Para testar con jest:</h2>
+    <p>npm test helloWorld.spec.js</p>
+
+    <h1>DOM Manipulation</h1>
+
+    <h2>Cross-site Scripting (problema con .innerHTML):</h2>
+    <pre>Vulnerable a &lt;img src onerror="alert(document.cookie)"></pre>
+
+    <h2>Timing of JavaScript</h2>
+    <p>Usamos defer en el head del html para que ejecute JavaScript
+        después de haber cargado el HTML.
+    </p>
+
+    <h1>Ejercicio con DOM</h1>
+  <div id="container">
+    <div class="content">This is the glorious text-content!</div>
+  </div>
+  <h2>Events (3 métodos, preferible con Event Listeners)</h2>
+  <button onclick="alert('Hello World')">Click Me</button>
+  <button id="btn">Click Me</button>
+  <button id="btn2">Click Me Too</button>
 </body>
 </html>

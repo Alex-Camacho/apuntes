@@ -24,9 +24,9 @@ let decimal = 3.14;
 //let y = "20"
 //let result = x + y; (1020)
 
-//isNAN() indica si una variable es un número
+//isNAN() indica si una variable es un número (NOT A NUMBER)
 let x = 3;
-isNaN(x); //true
+isNaN(x); //false
 
 //Infinity // -Infinity (existen)
 
@@ -440,7 +440,7 @@ arr.slice(); //Genera una copia sin modificar la original
 
 
 //arr.concat(arg1, arg2...) (NO MODIFICA EL ORIGINAL)
-//Concat crea un nuevo array que oncluya al final argumentos que indiquemos
+//Concat crea un nuevo array que incluya al final argumentos que indiquemos
 arr.concat(1,2) // ["Let's", 'dance', 'a', 'cool', 'move', 'now', 1, 2]
 
 
@@ -492,6 +492,11 @@ console.log(userFromTop.name); //John
 let someUsersObject = usersObject.filter(item => item.id < 3);
 
 console.log(someUsersObject) //devuelve un array con objetos id 1 y 2
+//También se puede filtrar con un array de varios números usando 
+const removeFromArray = function(array, ...value) {
+   let modifiedArray = array.filter(item => !value.includes(item));
+    return modifiedArray;
+   };
 
 
 
@@ -585,3 +590,52 @@ function sumOfTripledEvens(array){
     }
   }
 }
+
+
+
+
+//DOM MANIPULATION (Ejercicio)
+
+const container = document.querySelector("#container");
+
+const contentP = document.createElement("p");
+container.appendChild(contentP);
+contentP.textContent = "Hey I'm red!";
+contentP.style.color ="red";
+
+const contentH3 = document.createElement("h3");
+container.appendChild(contentH3);
+contentH3.style.color ="blue";
+contentH3.textContent ="I'm a blue h3!";
+
+const contentDiv = document.createElement("div");
+contentDiv.setAttribute("style", "color: black; background: pink;");
+
+const h3Child = document.createElement("h3");
+h3Child.textContent = "I'm in a div";
+const pChild = document.createElement("p");
+pChild.textContent = "ME TOO!";
+contentDiv.appendChild(h3Child);
+contentDiv.appendChild(pChild); 
+
+
+container.appendChild(contentDiv);
+
+
+//Events
+//Metodo 1: en el HTML añadir onclick="alert...")
+
+//Metodo 2: añadiendo propiedades en JavaScript:
+const btn = document.querySelector("#btn");
+btn.onclick = () => alert("Hello World");
+
+//Metodo 3: Event Listeners
+const btn2 = document.querySelector("#btn2");
+btn2.addEventListener("click", () => {
+  alert("Hello World");
+});
+
+btn2.addEventListener("click", function (e) {
+  e.target.style.background = "blue";
+});
+
